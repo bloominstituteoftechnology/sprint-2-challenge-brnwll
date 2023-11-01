@@ -161,7 +161,7 @@
       }
 
       // 👉 CHALLENGE 4
-      function scrub() {
+      function scrub(text, forbidden) {
         // 🧠 scrub takes a string "text" as its first argument, and an array of forbidden words "forbidden" as its second
         // Any word in the text included in the array of forbidden words is replaced with a word of equal length but made of lowcase "x"
         // The scrubbed text is then returned from the function, as seen in the examples below
@@ -173,6 +173,11 @@
         //    scrub("aces high", ["high", "aces", "hearts"]) // returns "xxxx xxxx"
         //    scrub("", ["high", "aces""]) // returns ""
         // 🌟 HINT: useful array methods to use are `push`, `indexOf`, `split`, `join`
+        for (let i = 0; i < forbidden.length; i++) {
+          const scrubbed = "x".repeat(forbidden[i].length);
+          text = text.replaceAll(forbidden[i], scrubbed);
+        }
+        return text;
       }
 
       // 👉 CHALLENGE 5
