@@ -217,7 +217,19 @@
         // 🌟 HINT: research using `Math.random` to obtain a number from 1 to 6
         // 🌟 HINT: use `while(true)` to throw the dice indefinitely, but avoid an infinite loop by making sure to break out eventually
         // 🌟 HINT: you need to keep track of the total number of throws, as well as how many sixes in a row
+        let rollCount = 0;
+        let sixCount = 0;
+        while (sixCount < 3) {
+          const roll = Math.floor(Math.random() * 6) + 1;
+          if (roll === 6) {
+            sixCount++;
+          }
+          rollCount++;
+        }
+        return rollCount;
       }
+
+      diceRolls();
 
       // 🧪 TESTS, do not make any changes below this line ===================
       // 🧪 TESTS, do not make any changes below this line ===================
